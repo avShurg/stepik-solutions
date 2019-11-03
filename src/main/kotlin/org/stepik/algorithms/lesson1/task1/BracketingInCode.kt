@@ -5,7 +5,8 @@ fun main() {
 }
 
 fun isBalanced(inputString: String): String {
-    val stack = arrayOfNulls<Char>(inputString.length / 2)
+    if (inputString.isEmpty()) return "Success"
+    val stack = arrayOfNulls<Char>(inputString.length)
     var indexStack = 0
     var lastIndexStack = 0
     var lastIndexOpenBracket = 0
@@ -35,7 +36,7 @@ fun isBalanced(inputString: String): String {
             }
         }
     }
-    return if (stack.isEmpty() || stack[0] == null) {
+    return if (stack[0] == null) {
         "Success"
     } else {
         (lastIndexOpenBracket+1).toString()

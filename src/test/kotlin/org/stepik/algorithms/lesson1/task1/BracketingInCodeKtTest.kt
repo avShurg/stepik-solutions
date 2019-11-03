@@ -8,5 +8,11 @@ internal class BracketingInCodeKtTest {
 
     @Test
     fun isBalanced() {
+        assertEquals("Success", isBalanced(""))
+        assertEquals("3", isBalanced("[[["))
+        assertEquals("5", isBalanced("[]{}}"))
+        assertEquals("5", isBalanced("[]{}{"))
+        assertEquals("Success", isBalanced("foo(bar);"))
+        assertEquals("10", isBalanced("foo(bar[i);"))
     }
 }
